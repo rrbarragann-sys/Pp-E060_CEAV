@@ -120,5 +120,32 @@
 </body>
 <style>
 body {min-height: auto !important;}
+
+/* === FIX REAL DEL ESPACIO EN BLANCO DEL CARRUSEL === */
+
+#carouselDocs {
+  overflow: hidden;
+}
+
+/* Evita que el carousel reserve altura extra */
+.carousel-inner {
+  height: auto !important;
+}
+
+/* CLAVE: evita alturas fantasma del slide */
+.carousel-item {
+  height: auto !important;
+  min-height: 0 !important;
+  padding-bottom: 10px;
+}
+
+/* fuerza a que cada slide solo mida su contenido */
+.carousel-item > .row {
+  align-items: flex-start;
+}
+
+/* elimina “aire” extra del grid */
+.carousel-item .col-md-4 {
+  margin-bottom: 0;
+}
 </style>
-</html>
